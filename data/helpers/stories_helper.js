@@ -4,6 +4,7 @@ module.exports = {
   addStory,
   getStories,
   findStoryByID,
+  getUserStories,
   updateStory,
   deleteStory
 };
@@ -29,6 +30,10 @@ function findStoryByID(id) {
   return db("stories")
     .where({ id: id })
     .first();
+}
+
+function getUserStories(userID) {
+  return db("stories").where({ poster_id: userID });
 }
 
 function updateStory(updatedStory) {
