@@ -4,8 +4,7 @@ const Users = require("../../data/helpers/users_helper");
 
 module.exports = {
   loginUser,
-  registerUser,
-  authenticateUser
+  registerUser
 };
 
 function loginUser(req, res) {
