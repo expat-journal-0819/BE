@@ -2,9 +2,12 @@ const express = require("express");
 const router = express.Router();
 
 const { updateUser, deleteUser } = require("../controllers/users_controller");
-const { validateToken } = require("../middleware/auth_middleware");
+const {
+  validateToken,
+  hashPassword
+} = require("../middleware/auth_middleware");
 
-router.route("/").put(validateToken, updateUser);
+router.route("/").put(validateToken, hashPassword, updateUser);
 
 router.route("/delete/:id").delete(validateToken, deleteUser);
 

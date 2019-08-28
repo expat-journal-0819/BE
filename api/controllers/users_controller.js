@@ -6,8 +6,8 @@ module.exports = {
 };
 
 function updateUser(req, res) {
-  const updates = req.body;
-  Users.updateUser(updates)
+  const { email, password, first_name, last_name, id } = req.body;
+  Users.updateUser({ email, password, first_name, last_name, id })
     .then(updatedUser => {
       res.status(203).json(updatedUser);
     })

@@ -5,7 +5,7 @@ exports.up = function(knex) {
     story.string("title").notNullable();
     story.string("content").notNullable();
     story
-      .integer("poster_id")
+      .integer("author_id")
       .unsigned()
       .notNullable()
       .references("id")
